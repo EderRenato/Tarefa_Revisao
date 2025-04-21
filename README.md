@@ -65,10 +65,10 @@ git clone https://github.com/EderRenato/Tarefa_Revisao.git
 #### Opção 2:
 - Após conectar no modo **BOOTSEL**, Copie o arquivo `.uf2` gerado para a unidade que aparecerá.
 
-## 👨‍💻 Autoria
-
-## OBS:
+### OBS:
 **Para a execução das ações com os buzzers deve-se utilizar o Monitor Serial do VS Code no modo Terminal ou utilizar o Putty**
+
+## 👨‍💻 Autoria
 
 Projeto desenvolvido por **Eder Renato** como parte das atividades de revisão para o ambiente de desenvolvimento com Raspberry Pi Pico na Fase 2 da Capacitação **CEPEDI/Embarcatech** .
 
