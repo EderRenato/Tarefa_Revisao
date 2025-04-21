@@ -56,9 +56,6 @@ const uint WRAP = (1000000 / FREQUENCY);  // Período em microssegundos
 int min_x = 14, max_x = 4080, center_x = 2040;
 int min_y = 14, max_y = 4084, center_y = 2050;
 // variaveis para controle trava e destrava do pwm
-bool pwm_locked = false;
-uint16_t locked_vrx = 0;
-uint16_t locked_vry = 0;
 int contador = 0;
 
 ssd1306_t ssd; // Inicialização a estrutura do display
@@ -138,17 +135,8 @@ int main()
     while (true) {
         display_numerico(contador);
         uint16_t vrx_value, vry_value;
-        if (pwm_locked) {
-            vrx_value = locked_vrx;
-            vry_value = locked_vry;
-        } else {
-            vrx_value = read_adc(1);
-            vry_value = read_adc(0);
-
-            // Atualiza os valores travados para manter caso seja travado depois
-            locked_vrx = vrx_value;
-            locked_vry = vry_value;
-        }
+        vrx_value = read_adc(1);
+        vry_value = read_adc(0);
 
         uint16_t vrx_norm = normalize_value(vrx_value, min_x, max_x, center_x);
         uint16_t vry_norm = normalize_value(vry_value, min_y, max_y, center_y);
